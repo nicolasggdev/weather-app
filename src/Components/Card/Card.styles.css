@@ -1,0 +1,70 @@
+h1, h2, h3{
+    color: #39A2DB;
+    margin: 0.5rem;;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem
+}
+
+b, i{
+    color: #053742;
+}
+
+button{
+    width: 8rem;
+    background-color: #A2DBFA;
+    border: none;
+    padding: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover{
+    background-color: #C37B89;
+}
+
+.card{
+    height: 40rem;
+    width: 45rem;
+    background-color: #e8f0f2de;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.info{
+    height: 60%;
+    display: flex;
+}
+
+.info_data{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.info_data p {
+    margin-bottom: 1rem;
+}
+
+.info_icon{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info_icon p, button{
+    margin: 0.8rem;
+}
+
+.search{
+    height: 3rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
