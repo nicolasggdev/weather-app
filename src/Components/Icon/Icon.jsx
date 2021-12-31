@@ -3,9 +3,13 @@ import React, { useEffect, useState } from 'react';
 // Styles
 import "./Icon.styles.css";
 
-const Icon = ({icon: weather}) => {
+// CustomHook
+import useRequest from '../CustomHooks/useRequest';
+
+const Icon = () => {
 
     // Hooks
+    const {icon} = useRequest();
     const [image, setImage] = useState(null);
 
     useEffect(() => {
@@ -36,9 +40,9 @@ const Icon = ({icon: weather}) => {
                 setImage("fas fa-smog");
             }
         };
-        img(weather);
-        console.log(weather)
-    },[weather]);
+        img(icon);
+        console.log(icon)
+    },[icon]);
 
 
     return (
