@@ -39,12 +39,11 @@ const Icon = ({icon: weather}) => {
         img(weather);
         console.log(weather)
     },[weather]);
-    
+
 
     return (
         <div className='container_icon'>
             <i className={`${image}`}></i>
-            {/* <i className="fas fa-smog"></i> */}
         </div>
     )
 }

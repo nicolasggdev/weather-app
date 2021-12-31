@@ -6,6 +6,7 @@ import "./Card.styles.css";
 
 // Components
 import Icon from "../Icon/Icon.jsx";
+import Loader from "../Loader/Loader.jsx";
 
 const Card = () => {
 
@@ -14,7 +15,7 @@ const Card = () => {
     const [isLocation, setIsLocation] = useState(false);
     const [degrees, setDegrees] = useState([null, "°C"]);
     const [search, setSearch] = useState (" ");
-    // const [isLoading, setIsLoading] = useState(true) // PENDIENTE ELABORAR LOADER
+    const [isLoading, setIsLoading] = useState(true);
 
     // PENDIENTE TRASLADAR LOGICA AL CUSTOMHOOK
     useEffect(() => {
@@ -36,6 +37,7 @@ const Card = () => {
                     icon: weather[0].icon,
                 });
                 setIsLocation(true);
+                setIsLoading(false);
                 setDegrees([Math.round(temp_max - 273.15), "°C"]);
             })
             .catch(err => console.log(err));
@@ -60,6 +62,7 @@ const Card = () => {
     };
 
     const customPlace = e => {
+        setIsLoading(true);
         e.preventDefault();
         const {target: {form}} = e;
         let place = form[0].value;
@@ -77,10 +80,12 @@ const Card = () => {
                 weather: weather[0].description,
                 icon: weather[0].icon,
             });
+            setIsLoading(false);
             setDegrees([Math.round(temp_max - 273.15), "°C"]);
         })
         .catch(err => {
             console.log(err);
+            setIsLoading(false);
             setSearch("It's necessary to write the place correctly")
         })
     };
@@ -88,45 +93,49 @@ const Card = () => {
     return (
         <div className='card'>
             <h1>Weather App</h1>
-            {isLocation ? (
-                <h2>{name}, {country}</h2>
-                ) : ( <h2>Can't access your location</h2>
-            )}
-            <div className='info'>
-                <div className='info_icon'>
-                    <Icon icon={icon}/>
-                    <p>
-                        {degrees[0]} {degrees[1]}
-                    </p>
-                    <button onClick={handleMeasure}>
-                        <b>Degrees °F/°C</b>
-                    </button>
-                </div>
-                <div className='info_data'>
-                    <p>
-                        <b>Weather:</b> {weather}
-                    </p>
-                    <p>
-                        <b>Wind speed:</b> {speed} m/s
-                    </p>
-                    <p>
-                        <b>Clouds:</b> {all} %
-                    </p>
-                    <p>
-                        <b>Pressure: </b>{pressure} hPa
-                    </p>
-                </div>
-            </div>    
-            <div className='search'>
-                <form method="get">
-                    {search === " " ? (
-                        <input className='search_text' type="text" placeholder="Search your city" required/> 
-                        ) : 
-                        <input className='search_text' type="text" placeholder="Search your city" title={search} required/>
-                    }
-                    <input className='search_submit' type="submit" value="Search" onClick={(e) => customPlace(e)}/>
-                </form>
-            </div>    
+            {isLoading ? 
+                <Loader/> : 
+                <>
+                    {isLocation ? (
+                        <h2>{name}, {country}</h2>
+                        ) : ( <h2>Can't access your location</h2>
+                    )}
+                    <div className='info'>
+                        <div className='info_icon'>
+                            <Icon icon={icon}/>
+                            <p>
+                                {degrees[0]} {degrees[1]}
+                            </p>
+                            <button onClick={handleMeasure}>
+                                <b>Degrees °F/°C</b>
+                            </button>
+                        </div>
+                        <div className='info_data'>
+                            <p>
+                                <b>Weather:</b> {weather}
+                            </p>
+                            <p>
+                                <b>Wind speed:</b> {speed} m/s
+                            </p>
+                            <p>
+                                <b>Clouds:</b> {all} %
+                            </p>
+                            <p>
+                                <b>Pressure: </b>{pressure} hPa
+                            </p>
+                        </div>
+                    </div>    
+                    <div className='search'>
+                        <form method="get">
+                            {search === " " ? (
+                                <input className='search_text' type="text" placeholder="Search your city" required/> 
+                                ) : 
+                                <input className='search_text' type="text" placeholder="Search your city" title={search} required/>
+                            }
+                            <input className='search_submit' type="submit" value="Search" onClick={(e) => customPlace(e)}/>
+                        </form>
+                    </div>    
+                </>}
         </div>
     );
 };
