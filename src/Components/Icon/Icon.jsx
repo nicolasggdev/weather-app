@@ -1,53 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 // Styles
 import "./Icon.styles.css";
 
-// CustomHook
-import useRequest from '../CustomHooks/useRequest';
+const Icon = ({icon}) => {
 
-const Icon = () => {
-
-    // Hooks
-    const {icon} = useRequest();
-    const [image, setImage] = useState(null);
-
-    useEffect(() => {
-        const img = param => {
-            if(param === "01d"){
-                setImage("fas fa-sun");
-            } else if(param === "01n"){
-                setImage("fas fa-moon");
-            } else if (param === "02d"){
-                setImage("fas fa-cloud-sun");
-            } else if(param === "02n"){
-                setImage("fas fa-cloud-moon");
-            } else if(param === "03d" || "03n"){
-                setImage("fas fa-cloud");
-            } else if(param === "04d" || "04n"){
-                setImage("fas fa-cloud");
-            } else if(param === "09d" || "09n"){
-                setImage("fas fa-cloud-showers-heavy");
-            } else if(param === "10d"){
-                setImage("fas fa-cloud-sun-rain");
-            } else if(param === "10n"){
-                setImage("fas fa-cloud-moon-rain");
-            } else if(param === "11d" || "11n"){
-                setImage("fas fa-poo-storm");
-            } else if(param === "13d" || "13n"){
-                setImage("far fa-snowflake");
-            } else if(param === "50d" || "50n"){
-                setImage("fas fa-smog");
-            }
-        };
-        img(icon);
-        console.log(icon)
-    },[icon]);
-
+    const img = () => {
+        if(icon === "01d"){
+            return "fas fa-sun";
+        } else if(icon === "01n"){
+            return "fas fa-moon";
+        } else if (icon === "02d"){
+            return "fas fa-cloud-sun";
+        } else if(icon === "02n"){
+            return "fas fa-cloud-moon";
+        } else if(icon === "03d" || "03n"){
+            return "fas fa-cloud";
+        } else if(icon === "04d" || "04n"){
+            return "fas fa-cloud";
+        } else if(icon === "09d" || "09n"){
+            return "fas fa-cloud-showers-heavy";
+        } else if(icon === "10d"){
+            return "fas fa-cloud-sun-rain";
+        } else if(icon === "10n"){
+            return "fas fa-cloud-moon-rain";
+        } else if(icon === "11d" || "11n"){
+            return "fas fa-poo-storm";
+        } else if(icon === "13d" || "13n"){
+            return "far fa-snowflake";
+        } else if(icon === "50d" || "50n"){
+            return "fas fa-smog";
+        }
+    };
 
     return (
         <div className='container_icon'>
-            <i className={`${image}`}></i>
+            <i className={img()}></i>
         </div>
     )
 }

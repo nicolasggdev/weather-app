@@ -34,13 +34,16 @@ const useRequest = () => {
             })
             .catch(err => console.log(err))
         };
-        const error = () => setIsLocation(false);
+        const error = () => {
+            setIsLocation(false);
+            setIsLoading(false);
+        };
         navigator.geolocation.getCurrentPosition(success, error);
     }, []);
 
     // Variables
     const {name, country, speed, all, temp, pressure, weather, icon} = data;
-    
+
     // Functions
     const handleMeasure = () => {
         let value = 0;

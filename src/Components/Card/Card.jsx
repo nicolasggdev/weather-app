@@ -11,7 +11,7 @@ import Loader from "../Loader/Loader.jsx";
 import useRequest from '../CustomHooks/useRequest';
 
 const Card = () => {
-
+    
     // Hooks
     const {
         name, 
@@ -20,9 +20,9 @@ const Card = () => {
         all,
         pressure, 
         weather, 
-        icon,
         isLocation,
         degrees,
+        icon,
         handleMeasure,
         search,
         customPlace,
@@ -41,7 +41,7 @@ const Card = () => {
                     )}
                     <div className='info'>
                         <div className='info_icon'>
-                            <Icon/>
+                            <Icon icon={icon}/>
                             <p>
                                 {degrees[0]} {degrees[1]}
                             </p>
@@ -74,7 +74,8 @@ const Card = () => {
                             <input className='search_submit' type="submit" value="Search" onClick={(e) => customPlace(e)}/>
                         </form>
                     </div>    
-                </>}
+                </>
+            }
         </div>
     );
 };
