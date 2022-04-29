@@ -1,103 +1,164 @@
-h1, h2, h3{
-    color: #39A2DB;
-    margin: 0.5rem;;
-    margin-bottom: 1rem;
-    margin-top: 1.5rem
+h1,
+h2,
+h3 {
+  color: #39a2db;
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
 }
 
-b, i{
-    color: #053742;
+b,
+i {
+  color: #053742;
 }
 
-button{
-    width: 8rem;
-    background-color: #A2DBFA;
-    border: none;
-    padding: 1rem;
-    border-radius: 2rem;
-    cursor: pointer;
-    text-align: center;
+button {
+  width: 8rem;
+  background-color: #a2dbfa;
+  border: none;
+  padding: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  text-align: center;
 }
 
-button:hover{
-    background-color: #C37B89;
+button:hover {
+  background-color: #c37b89;
 }
 
-.card{
-    height: 40rem;
-    width: 45rem;
-    background-color: #e8f0f2de;
-    border-radius: 1rem;
-    text-align: center;
-    position: relative;
+.card {
+  height: 40rem;
+  width: 45rem;
+  background-color: #e8f0f2de;
+  border-radius: 1rem;
+  text-align: center;
+  position: relative;
 }
 
-.info{
-    height: 60%;
-    display: flex;
+.info {
+  height: 60%;
+  display: flex;
 }
 
-.info_data{
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+.info_data {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .info_data p {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
-.info_icon{
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.info_icon {
+  height: 100%;
+  width: 50%;
 }
 
-.info_icon p, button{
-    margin: 0.8rem;
+.info_icon p,
+button {
+  margin: 0.8rem;
 }
 
-.search{
-    height: 3rem;
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.search {
+  height: 3rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.search_text{
-    width: 20rem;
-    padding: 0.5rem;
-    background-color: transparent;
-    border: 1px black solid;
-    border-right: none;
-    border-top-left-radius: 0.3rem;
-    border-bottom-left-radius: 0.3rem;
+.search_text {
+  width: 20rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: 1px black solid;
+  border-right: none;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
 }
 
-.search_submit{
-    width: 5rem;
-    padding: 0.5rem;
-    background-color: transparent;
-    border: 1px black solid;
-    border-left: none;
-    border-top-right-radius: 0.3rem;
-    border-bottom-right-radius: 0.3rem;
-    cursor: pointer;
-    font-weight: bold;
-    color: #053742;
-    background-color: #A2DBFA;
+.search_submit {
+  width: 5rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: 1px black solid;
+  border-left: none;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: #053742;
+  background-color: #a2dbfa;
 }
 
-.search_submit:hover{
-    background-color: #C37B89;
+.search_submit:hover {
+  background-color: #c37b89;
 }
 
 input.search_text:focus {
-    outline-width: 0;
+  outline-width: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 30rem;
+  }
+
+  .search_text {
+    width: 12rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .info {
+    display: revert;
+  }
+  .info_icon {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+  }
+  .info_icon p {
+    margin: 0;
+    margin-top: 1rem;
+    font-size: 5.5rem;
+    color: #053742;
+  }
+  .info_data {
+    height: 40%;
+    width: 100%;
+    display: revert;
+    margin-top: 1rem;
+  }
+  .card {
+    width: 60%;
+  }
+  .search_text {
+    width: 50%;
+  }
+  button {
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .search_text {
+    display: none;
+  }
+  .search_submit {
+    display: none;
+  }
+  .card {
+    height: 35rem;
+  }
+  .info_icon p {
+    font-size: 3.5rem;
+  }
 }

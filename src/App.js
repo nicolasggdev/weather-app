@@ -1,4 +1,3 @@
-
 // Styles
 import "./reset.styles.css";
 
@@ -8,9 +7,9 @@ import Card from "./Components/Card/Card.jsx";
 function App() {
   return (
     <div className="app">
-      <Card/>
+      <Card />
     </div>
   );
-};
+}
 
 export default App;

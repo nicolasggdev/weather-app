@@ -1,11 +1,23 @@
-.container_icon{
-    height: 70%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container_icon {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-i{
-    font-size: 13rem;
+i {
+  font-size: 13rem;
+}
+
+@media only screen and (max-width: 768px) {
+  i {
+    font-size: 8rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container_icon {
+    display: none;
+  }
 }
