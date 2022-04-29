@@ -148,6 +148,12 @@ input.search_text:focus {
   }
 }
 
+@media only screen and (max-width: 350px) {
+  .search {
+    margin-top: 0.5rem;
+  }
+}
+
 @media only screen and (max-width: 300px) {
   .search_text {
     display: none;
