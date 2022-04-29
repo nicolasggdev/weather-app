@@ -28,10 +28,10 @@ En el directorio del proyecto, debe usar npm i y esperar la instalación de los 
 En el directorio del proyecto, debe usar npm start y se abrirá http://localhost:3000 en una pestaña de tu navegador predeterminado; debes permitir conocer tu ubicación y así podrás conocer el clima de tu región. Aquí podrás vizualizar la aplicación localmente y realizar cambios temporales si deseas.
 
 <div display="flex">
-  <img height="400px" src="./src/Components/Captures/Captura1.PNG">
-  <img height="400px" src="./src/Components/Captures/Captura2.PNG">
-  <img height="400px" src="./src/Components/Captures/Captura3.PNG">
-  <img height="400px" src="./src/Components/Captures/Captura4.PNG">
+  <img height="400px" width="400px" src="./src/Components/Captures/Captura1.PNG">
+  <img height="400px" width="200px" src="./src/Components/Captures/Captura2.PNG">
+  <img height="400px" width="400px" src="./src/Components/Captures/Captura3.PNG">
+  <img height="400px" width="200px" src="./src/Components/Captures/Captura4.PNG">
 </div>
 
 Si tienes alguna sugerencia o comentario escribeme a mi correo o a mi perfil de linkin y con gusto lo tomare en cuenta!!
