@@ -75,7 +75,10 @@ const useRequest = () => {
       target: { form },
     } = e;
     let place = form[0].value;
-    const key = process.env.VITE_APP_API_KEY;
+
+    const { VITE_APP_API_KEY } = import.meta.env;
+
+    const key = VITE_APP_API_KEY;
     axios
       .get(`https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${key}`)
       .then((res) => {
